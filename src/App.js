@@ -17,9 +17,8 @@ export default function Board() {
   function handleClick(i){
     //すでに値が格納されている場合または勝敗が決定している場合
     if(squares[i] || calculateWinner(squares)){
-      return
+      return;
     }
-
 
     const nextSquares = squares.slice();
     if (xIsNext){
@@ -30,6 +29,12 @@ export default function Board() {
     setSquares(nextSquares)
     setXisNext(!xIsNext)
   };
+
+  function restartClick(){
+    //リセット処理をする
+    setSquares(Array(9).fill(null));
+    return;
+  }
 
   const winner = calculateWinner(squares);
   let status;
@@ -58,6 +63,9 @@ export default function Board() {
         <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
         <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
       </div>
+
+      <button className="restart" onClick={restartClick}>最初から</button>
+
     </>
   );
 }
