@@ -16,7 +16,7 @@ export default function Board() {
 
   function handleClick(i){
     //すでに値が格納されている場合または勝敗が決定している場合
- https://ja.react.dev/learn/thinking-in-react   if(squares[i] || calculateWinner(squares)){
+    if(squares[i] || calculateWinner(squares)){
       return
     }
 
@@ -42,23 +42,22 @@ export default function Board() {
 
   return (
     <>
-    <dev className="status">{status}</dev>
-    <dev className="board-row">
-      <Square value={squares[0]} onSquareClick={() =>handleClick(0)} />
-      <Square value={squares[1]}onSquareClick={() =>handleClick(1)}/>
-      <Square value={squares[2]}onSquareClick={() =>handleClick(2)}/>
-    </dev>
-    <dev className="board-row">
-      <Square value={squares[3]}onSquareClick={() =>handleClick(3)}/>
-      <Square value={squares[4]}onSquareClick={() =>handleClick(4)}/>
-      <Square value={squares[5]}onSquareClick={() =>handleClick(5)}/>
-    </dev>
-    <dev className="board-row">
-      <Square value={squares[6]}onSquareClick={() =>handleClick(6)}/>
-      <Square value={squares[7]}onSquareClick={() =>handleClick(7)}/>
-      <Square value={squares[8]}onSquareClick={() =>handleClick(8)}/>
-    </dev>
-
+      <div className="status">{status}</div>
+      <div className="board-row">
+        <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
+        <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
+        <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
+      </div>
+      <div className="board-row">
+        <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
+        <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
+        <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
+      </div>
+      <div className="board-row">
+        <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
+        <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
+        <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
+      </div>
     </>
   );
 }
